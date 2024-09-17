@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdfsdf</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .flex-container > div {
+            background-color: #f1f1f1;
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+            height: 100px;
+        }
+
+        
+    </style>
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        let children = document.querySelectorAll("#boksene > div");
+        console.log(children);
+
+        function changeColor() {
+            let one = document.getElementById("one");
+            one.style.backgroundColor = getRandomColor();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id="boksene" class="flex-container">
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>  
+            <div id="four"></div>
+        </div>
+    </div>
+    <button onclick="changeColor()">Change color</button>
+</body>
+</html>
