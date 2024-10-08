@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WANTED</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ewert">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ultra">
+
+    <style>
+        body {
+            background-image: url('wood.jpg');
+            text-align: center;
+            font-family: Ultra;
+            padding: 20px;
+        }
+
+        .parchment {
+            width: 488px;
+            height: 640px;
+            margin-left: auto;  
+            margin-right: auto;
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            background-image: url('parchment.jpg');
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+        }
+
+        .mugshot {
+            width: 300px;
+            height: 325px;
+            margin: 10px;
+            border: 2px solid #5e2a02;
+            display: block;
+            filter: sepia(50%);
+        }
+
+        body h1, h2, p {
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <main class="parchment">
+        <header class="tittel" >
+            <h1 style="font-family: 'Ewert'; font-size: 44pt;">WANTED</h1>
+            <p>Dead or alive</p>
+        </header>
+        <img src="mugshot.png" class="mugshot" alt="mugshot">
+        <footer class="pris">
+            <h1>Billy The Kid</h1>
+            <p>Armed & very dangerous</p>
+            <h2>Reward</h2>
+            <h1>$50.000</h1>
+        </footer>
+    </main>
+</body>
+</html>
