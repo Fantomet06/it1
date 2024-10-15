@@ -61,4 +61,9 @@ tr:nth-child(even) {
 
 .grid-container > div > img {
     margin-left: -250px;
+    transition: transform 5s;
+}
+
+.grid-container > div > img:hover {
+    transform: scale(1.5);
 }
