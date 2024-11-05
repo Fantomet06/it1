@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss - stjernebøker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        // forskjellige pc-er har ulik høyde, dette sørger for at hovedsiden er
+        // like stor som skjermen
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("placeholder").style.height = window.innerHeight + "px";
+            document.getElementById("placeholder").style.width = "100%";
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="flex-container">
+            <img style="height: 50px; margin: 10px;" src="logo.png" alt="logo">
+            <p style="color: white; font-size: 1.5rem;">Stjerne bøker</p>
+        </div>
+        
+        <nav>
+            <a href="/">Hjem</a>
+        </nav>
+    </header>
+    <main>
+        <div style="text-align: center;" class="information">
+            <h1>Om oss</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente error iste architecto dolorem voluptatibus facere adipisci iure odit aperiam. Nemo rem, tempore autem eaque dolore esse cupiditate quo omnis laudantium.</p>
+        </div>
+    </main>
+    <div id="placeholder"></div >
+</body>
+</html>

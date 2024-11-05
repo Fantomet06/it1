@@ -53,3 +53,15 @@ section {
 img {
     height: 300px;
 }
+
+@media screen and (max-width: 600px) {
+    img {
+        height: 250px;
+    }
+
+    .grid-container {
+        grid-template-columns: auto auto;
+        justify-content: center;
+        gap: 20px;
+    }
+}
