@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stjernebøker</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         // forskjellige pc-er har ulik høyde, dette sørger for at hovedsiden er
         // like stor som skjermen
@@ -22,9 +23,16 @@
         </div>
         
         <nav>
-            <a href="/om-oss.html">Om oss</a>
-            <a href="#">Toppen</a>
-            <a href="#populaere">Populære</a>
+            <ul>
+                <li><a href="/om-oss">Om oss</a></li>
+                <li><a href="#">Toppen</a></li>
+                <li><a href="#populaere">Populære</a></li>
+                <li><a href="#romantisk">Romantisk</a></li>
+                <li><a href="#scifi">Science Fiction</a></li>
+
+            <a href="javascript:void(0);" class="hamburger" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </nav>
     </header>
     <main>
@@ -36,7 +44,7 @@
         </div>
     </main>
     <div id="placeholder"></div >
-    <section>
+    <article>
         <section id="populaere">
             <header><h2>Populære bøker</h2></header>
             <div class="grid-container">
@@ -64,7 +72,14 @@
                 <img src="SciFi3.png" alt="Sci-Fi bok 3">
             </div>
         </section>
-        
-    </section>
+    </article>
+    <!--fix later-->
+    <footer>
+        <div class="flex-container">
+            <p>Stjernebøker</p>
+            <p>Telefon: 12345678</p>
+            <p>E-post: stjernebø
+        </div>
+    </footer>
 </body>
 </html>

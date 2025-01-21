@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/spill.css">
+    <title>SPILL</title>
+</head>
+<body>
+    <main>
+        <script src="./js/guess.js"></script>
+
+        <label for="lname">Your guess:</label><br>
+        <input type="number" id="lname" name="lname"><br><br>
+
+        <input type="submit" onclick="fn()" value="Submit">
+    </main>
+
+    <script>
+        function gn() {
+            console.log(number(1,10));
+        }
+
+        function fn() {
+            console.log(document.getElementById("lname").value);
+        }
+    </script>
+</body>
+</html>

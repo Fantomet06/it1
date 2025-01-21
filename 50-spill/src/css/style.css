@@ -1,0 +1,35 @@
+body {
+  background-color: orange;
+}
+
+p {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  
+}
+
+.container div {
+  width: 100px;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.gamecontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 70px;
+}
+
+.gamecontainer .container {
+  border-radius: 10px;
+  background-color: red;
+  display: block;
+}
+
+.gamecontainer .container:nth-child(2) {
+  background-color: white;
+}
+.gamecontainer .container:nth-child(3) {
+  background-color: yellow;
+}

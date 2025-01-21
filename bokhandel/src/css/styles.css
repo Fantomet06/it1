@@ -1,7 +1,7 @@
 .header {
     background-color: #333;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
     position: fixed;
     top: 0;
@@ -19,8 +19,8 @@ nav {
     justify-content: space-between;
 }
 
-nav > a {
-    padding: 1em;
+nav > ul > li > a {
+    padding: 0.5em;
     color: black;
     text-decoration: none;
     letter-spacing: .25rem;
@@ -28,9 +28,22 @@ nav > a {
     color: white;
 }
 
-nav > a:hover {
+nav > ul > li > a:hover {
     background-color: #555;
     color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 0;
+    float: left;
+}
+
+.hamburger {
+    display: none;
 }
 
 .information {
@@ -38,6 +51,7 @@ nav > a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 section {
@@ -63,5 +77,13 @@ img {
         grid-template-columns: auto auto;
         justify-content: center;
         gap: 20px;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .hamburger {
+        display: initial;
     }
 }
