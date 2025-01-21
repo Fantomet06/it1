@@ -3,3 +3,15 @@ main {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
+
+.player1 {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.player2 {
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
