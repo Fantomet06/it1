@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light background for contrast */
+  }
+
+.red-box {
+    width: 525px;
+    height: 300px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+
+    margin: 10px;
+}
+
+.red-box img {
+    margin-left: 25px;
+}
+
+.input-box {
+    width: 400px;
+    height: 300px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.input-box li {
+    margin: 10px;
+}
