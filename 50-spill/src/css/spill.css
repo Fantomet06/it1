@@ -1,34 +1,53 @@
+body {
+    background-color: #D4BDAC;
+}
+
 main {
     width: 50%;
     margin: auto;
-    background-color: antiquewhite;
+    background-color: #FFF1DB;
     text-align: center;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.players {
+.active {
+    border: 5px solid lightgreen;
+}
+
+.game {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
 
-.players div {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
+.game button {
+    font-size: 1em;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #D4BDAC;
 }
 
-.players > div {
+.game div {
+    margin: 10px;
+    padding: 10px;
+}
+
+.game > div {
     border-radius: 10px;
 }
 
 .player1 {
-    background-color: red;
+    background-color: #EF5A6F;
     color: white;
     text-align: center;
 }
 
 .player2 {
-    background-color: blue;
+    background-color: #536493;
     color: white;
     text-align: center;
 }
