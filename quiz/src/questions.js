@@ -2,6 +2,8 @@
 let quizEl = document.querySelector("#quiz");
 let resultatEl = document.querySelector("#resultat");
 
+let currentQuestion = 0;
+
 //let game_running = true;
 
 let quiz = [
@@ -16,21 +18,30 @@ let quiz = [
     fasit: "13"}
 ];
 
-for (let i = 0; i < quiz.length; i++) {
+function newQuestion() {
   let sporsmaal = document.createElement("div");
 
   sporsmaal.innerHTML = `
-    <h3 class='sporsmaal'>${quiz[i].sporsmaal}</h3>
+    <h3 class='sporsmaal'>${quiz[currentQuestion].sporsmaal}</h3>
   `
 
+  sporsmaal.innerHTML += `<form action="/action_page.php">`
+
   //legg til svaraldernativene
-  for (let x = 0; x < quiz[i]["alternativer"].length; x++) {
-
+  for (let x = 0; x < quiz[currentQuestion]["alternativer"].length; x++) {
     sporsmaal.innerHTML += `
-      <p>${quiz[i].alternativer[x]}</p>
+      <input type="radio" name="question${currentQuestion}" value="${quiz[currentQuestion].alternativer[x]}">${quiz[currentQuestion].alternativer[x]}<br>
     `
-
   }
+
+  sporsmaal.innerHTML += `
+    <br><button onclick="checkAnswer()">Sjekk svar</button>
+    </form>
+  `
+
   quizEl.appendChild(sporsmaal);
 }
 
+newQuestion();
+currentQuestion++;
+newQuestion();
