@@ -26,6 +26,7 @@ function checkAnswer() {
         radios[x].parentNode.style.color = "red";
       }
     }
+    radios[x].disabled = true;
   }
   
   resultatEl.innerHTML = `Du fikk ${correct} av ${quiz.length} riktig!`;
