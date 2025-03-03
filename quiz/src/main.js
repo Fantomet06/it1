@@ -1,6 +1,22 @@
+import { getQuizData } from "./api.js";
+import { initialize } from "./questions.js";
+
 let quizEl = document.querySelector("#quiz");
 let resultatEl = document.querySelector("#resultat");
 let mainEl = document.querySelector("#main");
+
+let quiz = [];
+//Henter quiz data from API
+async function startQuiz() {
+    quiz = await getQuizData(
+      `https://opentdb.com/api.php?amount=5&category=16&difficulty=easy`
+    );
+  
+    if (quiz.length > 0) {
+        quizEl.innerHTML = "";
+        initialize(quiz);
+    }
+}
 
 quizEl.innerHTML = `
     <form action="/action_page.php">
@@ -14,6 +30,7 @@ quizEl.innerHTML = `
         <br><br>
         <input type="submit" value="Submit">
     </form>
-`
 
-//Henter quiz data from API
+    <button id="start">Start quiz</button>
+`
+document.getElementById("start").addEventListener("click", startQuiz);

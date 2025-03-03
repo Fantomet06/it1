@@ -4,72 +4,12 @@ let resultatEl = document.querySelector("#resultat");
 let mainEl = document.querySelector("#main");
 
 let currentQuestion = 0;
-
 let quiz = [];
 
-async function getQuizData(url) {
-  /*
-  const response = await fetch(url);
-  if (response.status != 200) {
-    //gi tilbakemelding til bruker
-    alert("Feil når jeg hentet spørsmålene");
-    return [];
-  }
-
-  const data = await response.json();
-  const quizData = [];
-
-  for (let result of data["results"]) {
-    quizData.push({
-      sporsmaal: result.question,
-      alternativer: [...result.incorrect_answers, result.correct_answer].sort(() => Math.random() - 0.5),
-      fasit: result.correct_answer
-    });
-  }
-    */
-  const quizData = [
-    {
-      sporsmaal: "Hva er hovedstaden i Norge?",
-      alternativer: ["Oslo", "Bergen", "Trondheim", "Stavanger"],
-      fasit: "Oslo"
-    },
-    {
-      sporsmaal: "Hva er hovedstaden i Sverige?",
-      alternativer: ["Oslo", "Stockholm", "København", "Helsingfors"],
-      fasit: "Stockholm"
-    },
-    {
-      sporsmaal: "Hva er hovedstaden i Danmark?",
-      alternativer: ["Oslo", "Stockholm", "København", "Helsingfors"],
-      fasit: "København"
-    },
-    {
-      sporsmaal: "Hva er hovedstaden i Finland?",
-      alternativer: ["Oslo", "Stockholm", "København", "Helsingfors"],
-      fasit: "Helsingfors"
-    },
-    {
-      sporsmaal: "Hva er hovedstaden i Island?",
-      alternativer: ["Oslo", "Stockholm", "København", "Reykjavik"],
-      fasit: "Reykjavik"
-    }
-  ];
-  
-  return quizData;
-}
-
-//Henter spørsmålene fra Quiz-database-API
-async function startQuiz() {
-  quiz = await getQuizData(
-    `https://opentdb.com/api.php?amount=5&category=16&difficulty=easy`
-  );
-
-  if (quiz.length > 0) {
-    currentQuestion = 0;
-    alert("Quiz lastet inn");
-    console.log(quiz[0].sporsmaal);
-    addQuestion(quiz);
-  }
+export function initialize(quizData) {
+  quiz = quizData;
+  console.log(quiz);
+  addQuestion();
 }
 
 function checkAnswer() {
@@ -95,6 +35,7 @@ function checkAnswer() {
     window.location.reload();
   }
   mainEl.appendChild(new_quiz);
+  document.getElementById("checkAnswer").remove();
 }
 
 function newQuestion(changedQuestion) {
@@ -103,16 +44,15 @@ function newQuestion(changedQuestion) {
   }
 
   if (quiz.length === currentQuestion + 1) {
-    let buttonEl = document.querySelector("button");
-
-    if (buttonEl) {
+    if (document.getElementById("checkAnswer")) {
       return
     }
 
     let button = document.createElement("button");
     button.textContent = "Sjekk svar";
+    button.id = "checkAnswer";
     button.onclick = checkAnswer;
-    mainEl.appendChild(button);
+    return mainEl.appendChild(button);
   }
 
   currentQuestion++;
@@ -122,9 +62,8 @@ function newQuestion(changedQuestion) {
 function addQuestion() {
   let sporsmaal = document.createElement("div");
 
-  console.log(quiz[0].sporsmaal);
   sporsmaal.innerHTML = `
-    <h3 class='sporsmaal'>${quiz[0].sporsmaal}</h3>
+    <h3 class='sporsmaal'>${quiz[currentQuestion].sporsmaal}</h3>
   `
 
   sporsmaal.innerHTML += `<form action="/action_page.php">`
@@ -149,4 +88,3 @@ quizEl.addEventListener("change", function(event) {
   }
 });
 
-startQuiz();
