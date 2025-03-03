@@ -12,6 +12,11 @@
   background-color: #ffffff;
 }
 
+#root {
+  background-color: white;
+  border-radius: 10px;
+}
+
 button {
   background-color: #f9f9f9;
 }
@@ -42,4 +47,8 @@ button {
 
 button:hover {
   border-color: #646cff;
+}
+
+body {
+  background-color: gray;
 }

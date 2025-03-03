@@ -34,9 +34,7 @@ diceBtn.addEventListener('click', () => {
     activePlayer = parseInt((activePlayer + 1) % playerCount);
     playerDivs.forEach((div, i) => { div.classList.toggle('active', i === activePlayer) })
 
-    turnElement.textContent = `Spiller ${activePlayer + 1} sin tur`;
-
-    
+    turnElement.textContent = `Spiller ${activePlayer + 1} sin tur`;    
 });
 
 
