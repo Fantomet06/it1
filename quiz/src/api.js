@@ -1,10 +1,13 @@
 export async function getQuizData(url) {
-    /*
+    
     const response = await fetch(url);
+    if (response.response_code === 1) {
+      //gi tilbakemelding til bruker
+      return alert("Ikke nok spørsmål i denne kategorien");
+    }
     if (response.status != 200) {
       //gi tilbakemelding til bruker
-      alert("Feil når jeg hentet spørsmålene");
-      return [];
+      return alert("Feil når jeg hentet spørsmålene");
     }
   
     const data = await response.json();
@@ -17,7 +20,7 @@ export async function getQuizData(url) {
         fasit: result.correct_answer
       });
     }
-      */
+    /*
     const quizData = [
       {
         sporsmaal: "Hva er hovedstaden i Norge?",
@@ -45,6 +48,7 @@ export async function getQuizData(url) {
         fasit: "Reykjavik"
       }
     ];
+    */
     
     return quizData;
   }
