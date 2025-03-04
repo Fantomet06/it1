@@ -42,11 +42,9 @@ function checkAnswer() {
   document.getElementById("checkAnswer").remove(); //fjerner sjekk svar
 }
 
-function newQuestion(changedQuestion) {
+function newQuestion() {
   //hvis jeg prøver å gå tilbake til et spørsmål som allerede er besvart
-  if (currentQuestion > changedQuestion) {
-    return
-  }
+  
 
   // hvis jeg er på siste spørsmål, legg til sjekk svar knapp
   if (quiz.length === currentQuestion + 1) {
@@ -68,17 +66,19 @@ function newQuestion(changedQuestion) {
 function addQuestion() {
   // lager div for spørsmål
   let sporsmaal = document.createElement("div");
+  sporsmaal.className = "grid-container";
 
   // legg til spørsmålet
   sporsmaal.innerHTML = `
-    <h3 class='sporsmaal'>${quiz[currentQuestion].sporsmaal}</h3>
+    <h3 style="grid-area: 1 / 1 / 2 / 3;" class='sporsmaal'>${quiz[currentQuestion].sporsmaal}</h3>
   `
   //legg til svaralternativene
   for (let x = 0; x < quiz[currentQuestion]["alternativer"].length; x++) {
     sporsmaal.innerHTML += `
+    <div class="grid-${x}">
       <input id="${currentQuestion}${x}" type="radio" name="${currentQuestion}" value="${quiz[currentQuestion].alternativer[x]}">
       <label for="${currentQuestion}${x}">${quiz[currentQuestion].alternativer[x]}</label>
-      <br>
+    </div>
     `
   }
 
@@ -87,8 +87,12 @@ function addQuestion() {
 
 //hvis en radio knapp endres så kall newQuestion
 quizEl.addEventListener("change", function(event) {
+  if (currentQuestion > event.target.name) {
+    return
+  }
+
   if (event.target.type === "radio") {
-    newQuestion(event.target.name);
+    newQuestion();
   }
 });
 

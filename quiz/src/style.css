@@ -43,3 +43,18 @@ input[type="submit"], button {
 button:active {
   transform: translate(1px, 1px);
 }
+
+@media screen and (min-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .grid-0 { grid-area: 2 / 1 / 3 / 2; }
+  .grid-1 { grid-area: 2 / 2 / 3 / 3; }
+  .grid-2 { grid-area: 3 / 1 / 4 / 2; }
+  .grid-3 { grid-area: 3 / 2 / 4 / 3; }
+}

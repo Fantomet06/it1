@@ -1,8 +1,5 @@
-export function changeName(button, element, newname) {
-  button.addEventListener('click', () => {
-      const name = document.querySelector("#new-name").value;
-
-      const info = document.querySelector("#info");
+export function changeName(name) {
+  const info = document.querySelector("#info");
       info.innerHTML = `
         <p>Tittel</p>
         <p>Navn: ${name}</p>
@@ -10,5 +7,4 @@ export function changeName(button, element, newname) {
         <p>Trinn: </p>
         <p>Om personen</p>
       `
-  });
 }

@@ -5,11 +5,11 @@ import { changeName } from './updates.js'
 document.querySelector('#app').innerHTML = `
 <ul>
         <li>
-            <input type="text" id="new-name" />
+            Navn: <input type="text" id="new-name" maxlength="25"/>
         </li>
 
         <li>
-            <input type="text" id="new-phone" />
+            Tlf: <input type="number" id="new-phone" />
         </li>
 
         <li>
@@ -23,19 +23,27 @@ document.querySelector('#app').innerHTML = `
                 <input type="submit" value="Oppdater">
             </form>              
         <li>
-            <input type="text" id="new-name" />
-            <button id="change-name">Oppdater bio</button>
+            Om deg: <input type="text" id="new-bio" maxlength="25" />
         </li>
     </ul>
 `
 
-const input = document.querySelector('#new-name');
-const log = document.querySelector('#name');
 
-input.addEventListener('input', updateValue);
+
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+    input.addEventListener('input', updateValue);
+});
 
 function updateValue(e) {
-    
+    const nameEl = document.querySelector('#name');
+    const tlfEl = document.querySelector('#tlf');
+    const bioEl = document.querySelector('#bio');
+
+    nameEl.textContent = "Navn: " + document.querySelector('#new-name').value;
+    tlfEl.textContent = "Tlf: " + document.querySelector('#new-phone').value;
+    bioEl.textContent = "Om personen: " + document.querySelector('#new-bio').value;
 }
 
 //changeName(document.querySelector("#change-name"), document.querySelector("#name"), document.querySelector("#new-name"));
