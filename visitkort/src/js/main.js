@@ -1,5 +1,8 @@
 import '../css/kort.css'
 
+localStorage.setItem("myCat", "Tom");
+
+
 import { changeName } from './updates.js'
 
 document.querySelector('#app').innerHTML = `
