@@ -1,14 +1,18 @@
-const books = [
-  { id: 1, tittel: "1984", forfatter: "George Orwell", pris: 199 },
-  { id: 2, tittel: "Dune", forfatter: "Frank Herbert", pris: 249 },
-  { id: 3, tittel: "Harry Potter", forfatter: "J.K. Rowling", pris: 159 },
-  { id: 4, tittel: "2001: En romodyssé",forfatter: "Arthur C. Clarke",pris: 219,},
-  { id: 5, tittel: "2010: Andre romodysseen",forfatter: "Arthur C. Clarke",pris: 229,},
-  { id: 6, tittel: "Blade Runner", forfatter: "Philip K. Dick", pris: 189 },
-];
+let books = [];
+
+fetch('/books.json')
+  .then(response => response.json())
+  .then(data => {
+    books = data;
+    //console.log("Loaded books:", books);
+    visBøker();
+    updateCartIcon();
+  })
+  .catch(error => {
+    console.error("Error fetching books:", error);
+  });
 
 // Variabel for handlekurv (initielt udefinert)
-let shoppingCart = [];
 let total = 0;
 
 function visBøker() {
@@ -37,35 +41,34 @@ function visBøker() {
   }
 }
 
-visBøker();
-
 function addToCart(bookId) {
   for (const book of books) {
     if (book.id === bookId) {
-      shoppingCart.push(book);
       updateCart(book);
+      updateCartIcon();
     }
   }
 }
 
 function updateCart(book) {
 
-  // UPDATE LOCALSTORAGE
-  if (shoppingCart === undefined) {
-    const storedCart = localStorage.getItem("cart");
-    shoppingCart = storedCart ? JSON.parse(storedCart) : [];
+  const storedCart = localStorage.getItem("cart");
+  let shoppingCart = storedCart ? JSON.parse(storedCart) : [];
+  // exit = [item in shoppingCart if item.id == book.id]
+  const exist = shoppingCart.find(item => item.id === book.id);
+  if (exist) {
+    exist.count += 1;
+  } else {
+    // shoppingCart.append({book, count: 1})
+    shoppingCart.push({ ...book, count: 1 });
   }
-  localStorage.setItem("cart", JSON.stringify(shoppingCart));
 
-  // UPDATE HTML
-  const cart = document.querySelector("#cart-list");
-  const bookElement = document.createElement("div");
-  bookElement.classList.add("cart-item");
-  bookElement.innerHTML = `
-        <h4>${book.tittel}</h4>
-        <p>Pris: ${book.pris} NOK</p>
-    `;
-  cart.appendChild(bookElement);
-  total += book.pris;
-  document.querySelector("#totalpris").textContent = `${total}`;
+  localStorage.setItem("cart", JSON.stringify(shoppingCart));
+}
+
+
+function updateCartIcon () {
+  let itemcount = Object.keys(JSON.parse(localStorage.getItem('cart'))).length || 0;
+  console.log(itemcount);
+  document.querySelector('#cart-icon').setAttribute("value", itemcount);
 }

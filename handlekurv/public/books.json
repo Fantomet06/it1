@@ -1,0 +1,8 @@
+[
+  { "id": 1, "tittel": "1984", "forfatter": "George Orwell", "pris": 199 },
+  { "id": 2, "tittel": "Dune", "forfatter": "Frank Herbert", "pris": 249 },
+  { "id": 3, "tittel": "Harry Potter", "forfatter": "J.K. Rowling", "pris": 159 },
+  { "id": 4, "tittel": "2001: En romodyssé", "forfatter": "Arthur C. Clarke", "pris": 219 },
+  { "id": 5, "tittel": "2010: Andre romodysseen", "forfatter": "Arthur C. Clarke", "pris": 229 },
+  { "id": 6, "tittel": "Blade Runner", "forfatter": "Philip K. Dick", "pris": 189 }
+]

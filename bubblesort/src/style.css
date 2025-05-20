@@ -1,0 +1,26 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+p {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: white;
+}
+
+#app {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.number {
+  background-color: blue;
+  width: 200px;
+}
+
+.swap {
+  background-color: red;
+  width: 200px;
+}

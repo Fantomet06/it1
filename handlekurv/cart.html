@@ -9,19 +9,20 @@
   </head>
   <body>
     <nav>
-      <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html">Home</a></li>
 
-      <li style="float:right">
-        <a href="cart.html">
-          <i id="cart-icon" class="fa badge fa-lg" value="0">&#xf07a;</i>
-        </a>
-      </li>
+        <li style="float:right">
+            <a href="cart.html">
+            <i id="cart-icon" class="fa badge fa-lg" value="0">&#xf07a;</i>
+            </a>
+        </li>
     </nav>
 
-    <main class="container">
-      <h1>Bokhandel</h1>
-      <div id="book-list"></div>  <!--opprettes dynamisk-->
+    <main class="beholder">
+        <ul id="cart-list"></ul>
+        <strong>Total: <span id="totalpris">0</span> NOK</strong>
+
     </main>
-    <script src="src/main.js"></script>
+    <script src="src/cart.js"></script>
   </body>
 </html>
