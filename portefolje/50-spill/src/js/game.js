@@ -1,3 +1,5 @@
+import { getRandomNumber } from './randomNum.js';
+
 // -- ELEMENTS --
 const scoreElements = document.querySelectorAll('#score');
 const playerDivs = document.querySelectorAll('#player');
@@ -13,9 +15,6 @@ const diceBtn = document.querySelector('#dice');
 const restartBtn = document.querySelector('#restart');
 
 
-function getRandomNumber() {
-    return Math.floor(Math.random() * 6) + 1;
-}
 
 diceBtn.addEventListener('click', () => {
     let newScore = parseInt(scoreElements[activePlayer].textContent) + getRandomNumber();

@@ -1,12 +1,4 @@
 import './style.css'
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
 
 function showList(list, swap, status) {
   document.querySelector('#app').innerHTML = ``;
@@ -14,6 +6,7 @@ function showList(list, swap, status) {
   list.forEach((item) => {
     let number = document.createElement('div');
     number.classList.add('number')
+    number.style.height = `${item * 100}px`;
     number.innerHTML = `<h1>${item}</h1>`;
 
     if (swap.includes(item)) {
