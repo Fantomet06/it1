@@ -1,0 +1,23 @@
+body {
+  display: grid;
+  grid: auto-flow / 1fr 1fr;
+}
+
+section {
+  background-color: antiquewhite;
+  width: 100%;
+  justify-items: center;
+}
+
+section:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+#billetter {
+  display: flex;
+  flex-wrap: wrap
+}
+
+#billetter > div {
+  margin: 20px;
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    
+    <title>Vite App</title>
+  </head>
+  <body>
+    <section>
+      <div id="billetter"></div>
+      <br>
+      <form action="">
+        <label for="barnevogn">Skal du bruke med barnevogn?</label>
+        <select id="barnevogn">
+          <option value="Nei">Nei</option>
+          <option value="Ja">Ja</option>
+        </select>
+      </form>
+      <form action="reservation">
+        Når er ankomst?
+        <input
+          id="time"
+          type="datetime-local"
+          name="revervation-time"/>
+      </form>
+    </section>
+    <section>
+      <div id="handlekurv"></div>
+      <br>
+      <button>Betal nå</button>
+    </section>
+    <script type="module" src="/src/billetter.js"></script>
+  </body>
+</html>

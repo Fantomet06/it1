@@ -10,7 +10,7 @@ const client = new MongoClient(uri); //klient for å kommuniserer med database
 let db; //Variable for selve database
 async function connect() {
   await client.connect();
-  db = client.db("bokhandler"); //Her skriver du navn til din database, f.eks. 'bokhandler'
+  db = client.db("bokhandel"); //Her skriver du navn til din database, f.eks. 'bokhandler'
   console.log("mongodb ✅");
 }
 

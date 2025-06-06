@@ -1,28 +1,32 @@
-import './App.css'
 import './index.css'
 import './reservation.css'
-import fs from 'fs';
 
 import { createRoot } from 'react-dom/client'
 
 function Reservation() {
 
     const queryParams = new URLSearchParams(window.location.search)
-    const term = queryParams.get("name")
+    const name = queryParams.get("name")
+    const email = queryParams.get("email")
+    const time = queryParams.get("revervation-time")
+
+
 
     fetch('http://localhost:5000/save-reservation', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(term)
+        body: JSON.stringify(name)
     })
 
     return (
         <>
             <div class="reservation">
                 <h1>Reservasjon</h1>
-                <p>Value of term: {term}</p>
+                <p>Navn: {name}</p>
+                <p>Epost: {email}</p>
+                <p>Tid:{time} </p>
                 <form action="reservation">
                     <button>
                     Avbestill

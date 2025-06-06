@@ -1,0 +1,1 @@
+for å kjøre koden må du kjøre `npm install` først og så `npm run dev` for å starte serveren.
